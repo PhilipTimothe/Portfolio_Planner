@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import CompanyContainer from'./containers/CompanyContainer'
 
 function App() {
   return (
-    <h1>Hello</h1>
+    <CompanyContainer />
   );
 }
 
