@@ -2,6 +2,16 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
+function handleExploreClick(e) {
+    e.preventDefault();
+    console.log(e);
+  }
+
+function handleAddPorfolioClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
+}
+
 function Company(props) {
 
     return  <>
@@ -14,8 +24,8 @@ function Company(props) {
                         Region: {props.companyRegion} <br/>
                         Currency: {props.companyCurrency} <br/>
                     </Card.Text>
-                    <Button variant="dark">Explore</Button>{' '}
-                    <Button variant="dark">Add to Portfolio</Button>
+                    <Button variant="dark" onClick={handleExploreClick}> Explore </Button>{' '}
+                    <Button variant="dark" onClick={handleAddPorfolioClick}> Add to Portfolio </Button>
                 </Card.Body>
             </Card>
             </>

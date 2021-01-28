@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import CompanyList from './CompanyList';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -44,6 +44,7 @@ export default class CompanySearchForm extends Component {
             <>
                 {this.state.searchResultsList.map((company) => (
                     <CompanyList 
+                        key={uuidv4()}
                         companySymbol={company["1. symbol"]} 
                         companyName={company["2. name"]}
                         companyType={company["3. type"]}
