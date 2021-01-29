@@ -39,9 +39,12 @@ export default class CompanySearchForm extends Component {
         })
     }
 
-    companySelection(companyInfo, id) {
-            console.log(companyInfo);
-            console.log(id);
+    companySelection = (companyInfo, event) => {
+        this.setState({
+            currentCompany: companyInfo,
+        })
+            // console.log(companyInfo);
+            // console.log(this.state.currentCompany);
     }
 
     renderCompanyList() {
@@ -49,7 +52,7 @@ export default class CompanySearchForm extends Component {
             <>
                 {this.state.searchResultsList.map((company) => (
                     <Company 
-                        key={uuidv4()}
+                        id={uuidv4()}
                         companySymbol={company["1. symbol"]} 
                         companyName={company["2. name"]}
                         companyType={company["3. type"]}
@@ -64,6 +67,7 @@ export default class CompanySearchForm extends Component {
 
     render() {
         return (
+            console.log(this.state.currentCompany),
             <>
                 <Form onSubmit={this.handleSubmit} style={{ width: '30rem', margin: '1rem auto'}}>
                     <Form.Group controlId="SearchForm">
@@ -86,6 +90,7 @@ export default class CompanySearchForm extends Component {
                 </Form>
                 <div>
                     {this.renderCompanyList()}
+                    
                 </div>
             </>
         );
