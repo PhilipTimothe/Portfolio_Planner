@@ -1,12 +1,11 @@
 import React from 'react';
-// import { v4 as uuidv4 } from 'uuid';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 export function Company(props) {
     return ( 
         <>
-            <Card key={props.id} style={{ width: '30rem', margin: '1rem auto' }} >
+            <Card id={props.id} style={{ width: '30rem', margin: '1rem auto' }} >
                 <Card.Header as="h5">Company Symbol: {props.companySymbol}</Card.Header>
                 <Card.Body>
                     <Card.Title>{props.companyName}</Card.Title>
