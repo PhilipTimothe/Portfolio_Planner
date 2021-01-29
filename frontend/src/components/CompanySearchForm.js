@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import CompanyList from './CompanyList';
+import { Company } from './CompanyList';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -16,7 +16,8 @@ const apiKey = process.env.API_KEY;
 export default class CompanySearchForm extends Component {
     state = {
           symbol: "",
-          searchResultsList: []
+          searchResultsList: [],
+          currentCompany: []
     }
 
     handleChange = event => {
@@ -30,7 +31,6 @@ export default class CompanySearchForm extends Component {
        
         fetch(`https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${this.state.symbol}&apikey=${apiKey}`)
             .then((res) => res.json())
-            // .then((data) => console.log(data));
             .then(data => {
                 const companies = Object(data.bestMatches);
                 this.setState({ 
@@ -39,17 +39,23 @@ export default class CompanySearchForm extends Component {
         })
     }
 
+    companySelection(companyInfo, id) {
+            console.log(companyInfo);
+            console.log(id);
+    }
+
     renderCompanyList() {
         return (
             <>
                 {this.state.searchResultsList.map((company) => (
-                    <CompanyList 
+                    <Company 
                         key={uuidv4()}
                         companySymbol={company["1. symbol"]} 
                         companyName={company["2. name"]}
                         companyType={company["3. type"]}
                         companyRegion={company["4. region"]}
                         companyCurrency={company["8. currency"]}
+                        handleExploreClick={this.companySelection}
                     />
                 ))}
             </>
