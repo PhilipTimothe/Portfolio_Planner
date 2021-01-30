@@ -43,21 +43,23 @@ export default class CompanySearchForm extends Component {
     renderSelectedCompany() {
         return (
             <>
+                {this.state.currentCompany.map((company) => (
                     <CompanyView
                         key={uuidv4()}
                         id={uuidv4()}
-                        symbol={this.state.currentCompany["Symbol"]} 
-                        name={this.state.currentCompany["Name"]}
-                        industry={this.state.currentCompany["Industry"]}
-                        assetType={this.state.currentCompany["AssetType"]}
-                        currency={this.state.currentCompany["Currency"]}
-                        exchange={this.state.currentCompany["Exchange"]}
-                        country={this.state.currentCompany["Country"]}
-                        sector={this.state.currentCompany["Sector"]}
-                        address={this.state.currentCompany["Address"]}
-                        description={this.state.currentCompany["Description"]}
+                        symbol={company["Symbol"]} 
+                        name={company["Name"]}
+                        industry={company["Industry"]}
+                        assetType={company["AssetType"]}
+                        currency={company["Currency"]}
+                        exchange={company["Exchange"]}
+                        country={company["Country"]}
+                        sector={company["Sector"]}
+                        address={company["Address"]}
+                        description={company["Description"]}
                         // handleExploreClick={this.handleCompanySelection}
                     />
+                ))}
             </>
         )
     }
@@ -90,17 +92,22 @@ export default class CompanySearchForm extends Component {
         }
     }
 
-    handleCompanySelection = (event, companyInfo) => {
+    handleCompanySelection = (companyInfo, event) => {
+        this.setState({
+            currentCompany: []
+        })
 
+        event.preventDefault();
         fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${companyInfo["companySymbol"]}&apikey=${apiKey}`)
             .then((res) => res.json())
             .then(data => {
                 const company = Object(data);
                 this.setState({ 
-                    currentCompany: company
+                    currentCompany: [...this.state.currentCompany, company]
                 })
+                console.log(this.state.currentCompany)
             })
-            console.log(this.state.currentCompany["Name"])
+            
     }
 
     render() {
@@ -113,7 +120,7 @@ export default class CompanySearchForm extends Component {
                     onChange={this.handleSearchFormChange}
                 />
                 <div>
-                    { this.state.currentCompany.length > 0 && this.renderSelectedCompany()}
+                    {this.state.currentCompany.length > 0 && this.renderSelectedCompany()}
                     {this.renderCompanyList()}
                 </div>
             </>
