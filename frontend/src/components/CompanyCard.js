@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 export function Company(props) {
     return ( 
@@ -14,7 +15,9 @@ export function Company(props) {
                         Region: {props.companyRegion} <br/>
                         Currency: {props.companyCurrency} <br/>
                     </Card.Text>
+                    <link to={"/company"}>
                     <Button variant="dark" onClick={(e) => props.handleExploreClick(props, e)}> Explore </Button>{' '}
+                    </link>
                     <Button variant="dark" > Add to Portfolio </Button>
                 </Card.Body>
             </Card>
