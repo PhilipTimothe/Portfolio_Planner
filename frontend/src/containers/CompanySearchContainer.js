@@ -2,13 +2,10 @@ import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { SearchForm } from '../components/CompanySearchForm';
 import { Company } from '../components/CompanyCard';
-// import { CompanyView } from '../components/CompanyOverview';
-import { store } from '../store';
-// import { Link } from "react-router-dom";
+import { CompanyView } from '../components/CompanyOverview';
+// import { store } from '../store';
 
-// component needs to provide a search form, then display any search results after input is sumbitted.
-// results list should save information to state but only show current search results
-// on submit form information needs to be fetched
+// Have to figure out how to get routed page to render.
 
 const apiKey = process.env.API_KEY;
 
@@ -17,7 +14,7 @@ export default class CompanySearchForm extends Component {
           symbol: "",
           searchResultsList: [],
           currentCompany: [],
-          validated: false
+          validated: false,
     }
 
     renderCompanyList() {
@@ -39,29 +36,29 @@ export default class CompanySearchForm extends Component {
         )
     }
 
-    // renderSelectedCompany() {
-    //     return (
-    //         <>
-    //             {this.state.currentCompany.map((company) => (
-    //                 <CompanyView
-    //                     key={uuidv4()}
-    //                     id={uuidv4()}
-    //                     symbol={company["Symbol"]} 
-    //                     name={company["Name"]}
-    //                     industry={company["Industry"]}
-    //                     assetType={company["AssetType"]}
-    //                     currency={company["Currency"]}
-    //                     exchange={company["Exchange"]}
-    //                     country={company["Country"]}
-    //                     sector={company["Sector"]}
-    //                     address={company["Address"]}
-    //                     description={company["Description"]}
-    //                     // handleExploreClick={this.handleCompanySelection}
-    //                 />
-    //             ))}
-    //         </>
-    //     )
-    // }
+    renderSelectedCompany() {
+        return (
+            <>
+                {this.state.currentCompany.map((company) => (
+                    <CompanyView
+                        key={uuidv4()}
+                        id={uuidv4()}
+                        symbol={company["Symbol"]} 
+                        name={company["Name"]}
+                        industry={company["Industry"]}
+                        assetType={company["AssetType"]}
+                        currency={company["Currency"]}
+                        exchange={company["Exchange"]}
+                        country={company["Country"]}
+                        sector={company["Sector"]}
+                        address={company["Address"]}
+                        description={company["Description"]}
+                        // handleExploreClick={this.handleCompanySelection}
+                    />
+                ))}
+            </>
+        )
+    }
 
     handleSearchFormChange = event => {
         this.setState({
@@ -98,15 +95,15 @@ export default class CompanySearchForm extends Component {
         event.preventDefault();
         fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${companyInfo["companySymbol"]}&apikey=${apiKey}`)
             .then((res) => res.json())
-            .then(data => store.currentCompany.push(Object(data)));
-            console.log(store.currentCompany)
-            //     {
-            //     const company = Object(data);
-            //     this.setState({ 
-            //         currentCompany: [...this.state.currentCompany, company]
-            //     })
-            //     console.log(this.state.currentCompany)
-            // })
+            .then(data => // store.currentCompany.push(Object(data)));
+                {
+                const company = Object(data);
+                store.currentCompanySymbol.push(company["Symbol"])
+                this.setState({ 
+                    currentCompany: [...this.state.currentCompany, company]
+                })
+                console.log(this.state.currentCompany)
+            })
             
     }
 
@@ -120,7 +117,7 @@ export default class CompanySearchForm extends Component {
                     onChange={this.handleSearchFormChange}
                 />
                 <div>
-                    {/* {this.state.currentCompany.length > 0 && this.renderSelectedCompany()} */}
+                    {this.state.currentCompany.length > 0 && this.renderSelectedCompany()}
                     {this.renderCompanyList()}
                 </div>
             </>
