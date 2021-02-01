@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { SearchForm } from '../components/CompanySearchForm';
-import { Company } from '../components/CompanyCard';
-import { CompanyView } from '../components/CompanyOverview';
+import { CompanySearchForm } from '../components/CompanySearchForm';
+import { CompanyCard } from '../components/CompanyCard';
+import { CompanyOverview } from '../components/CompanyOverview';
 import { store } from '../store';
 
 // Have to figure out how to get routed page to render.
 
 const apiKey = process.env.API_KEY;
 
-export default class CompanySearchForm extends Component {
+export default class CompanySearchContainer extends Component {
     state = {
           symbol: "",
           searchResultsList: [],
@@ -21,7 +21,7 @@ export default class CompanySearchForm extends Component {
         return (
             <>
                 {this.state.searchResultsList.map((company) => (
-                    <Company 
+                    <CompanyCard 
                         key={uuidv4()}
                         id={uuidv4()}
                         companySymbol={company["1. symbol"]} 
@@ -36,29 +36,29 @@ export default class CompanySearchForm extends Component {
         )
     }
 
-    renderSelectedCompany() {
-        return (
-            <>
-                {this.state.currentCompany.map((company) => (
-                    <CompanyView
-                        key={uuidv4()}
-                        id={uuidv4()}
-                        symbol={company["Symbol"]} 
-                        name={company["Name"]}
-                        industry={company["Industry"]}
-                        assetType={company["AssetType"]}
-                        currency={company["Currency"]}
-                        exchange={company["Exchange"]}
-                        country={company["Country"]}
-                        sector={company["Sector"]}
-                        address={company["Address"]}
-                        description={company["Description"]}
-                        handleAddToPortfolio={this.handlePortfolio}
-                    />
-                ))}
-            </>
-        )
-    }
+    // renderSelectedCompany() {
+    //     return (
+    //         <>
+    //             {this.state.currentCompany.map((company) => (
+    //                 <CompanyOverview
+    //                     key={uuidv4()}
+    //                     id={uuidv4()}
+    //                     symbol={company["Symbol"]} 
+    //                     name={company["Name"]}
+    //                     industry={company["Industry"]}
+    //                     assetType={company["AssetType"]}
+    //                     currency={company["Currency"]}
+    //                     exchange={company["Exchange"]}
+    //                     country={company["Country"]}
+    //                     sector={company["Sector"]}
+    //                     address={company["Address"]}
+    //                     description={company["Description"]}
+    //                     handleAddToPortfolio={this.handlePortfolio}
+    //                 />
+    //             ))}
+    //         </>
+    //     )
+    // }
 
     handleSearchFormChange = event => {
         this.setState({
@@ -87,24 +87,24 @@ export default class CompanySearchForm extends Component {
         }
     }
 
-    handleCompanySelection = (companyInfo, event) => {
-        this.setState({
-            currentCompany: []
-        })
-        event.preventDefault();
-        fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${companyInfo["companySymbol"]}&apikey=${apiKey}`)
-            .then((res) => res.json())
-            .then(data => // store.currentCompany.push(Object(data)));
-                {
-                const company = Object(data);
-                this.setState({ 
-                    currentCompany: [...this.state.currentCompany, company]
-                })
-                store.currentCompanySymbol += company["Symbol"]
-                console.log(store.currentCompanySymbol)
-            })
+    // handleCompanySelection = (companyInfo, event) => {
+    //     this.setState({
+    //         currentCompany: []
+    //     })
+    //     event.preventDefault();
+    //     fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${companyInfo["companySymbol"]}&apikey=${apiKey}`)
+    //         .then((res) => res.json())
+    //         .then(data => // store.currentCompany.push(Object(data)));
+    //             {
+    //             const company = Object(data);
+    //             this.setState({ 
+    //                 currentCompany: [...this.state.currentCompany, company]
+    //             })
+    //             store.currentCompanySymbol += company["Symbol"]
+    //             // console.log(store.currentCompanySymbol)
+    //         })
             
-    }
+    // }
 
     handlePortfolio(companyInfo) {
         store.currentPortfolio.push(companyInfo);
@@ -114,7 +114,7 @@ export default class CompanySearchForm extends Component {
     render() {
         return (
             <>
-                <SearchForm 
+                <CompanySearchForm 
                     onSubmit={this.handleSearchFormSubmit}
                     validated={this.state.validated}
                     value={this.state.symbol}

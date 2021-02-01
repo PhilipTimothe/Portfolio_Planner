@@ -1,11 +1,12 @@
 import React from 'react';
-import CompanyChart from '../containers/CompanyChartContainer'
+import CompanyChartContainer from '../containers/CompanyChartContainer'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
+import { store } from '../store'
 
-export function CompanyView(props) {
+export function CompanyOverview(props) {
     return ( 
         <>
         <Tabs id={props.id} style={{ width: '50rem', margin: '1rem auto' }} defaultActiveKey="home" transition={false}>
@@ -34,7 +35,7 @@ export function CompanyView(props) {
                     <Card.Body >
                         <Card.Title>{props.name}</Card.Title>
                         <Card.Text>
-                            <CompanyChart />
+                            {store.currentCompanySymbol && <CompanyChartContainer />}
                         </Card.Text>
                     </Card.Body>
                 </Card>

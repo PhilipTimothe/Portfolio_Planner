@@ -2,7 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-export function SearchForm(props) {
+export function CompanySearchForm(props) {
     return ( 
         <>
             <Form noValidate validated={props.validated} onSubmit={props.onSubmit} style={{ width: '30rem', margin: '1rem auto'}}>

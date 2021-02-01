@@ -4,7 +4,7 @@ import { store } from '../store';
 
 const apiKey = process.env.API_KEY;
 
-export default class CompanyChart extends Component {
+export default class CompanyChartContainer extends Component {
         state = {
             chartData: {
                 labels: [],
@@ -32,31 +32,33 @@ export default class CompanyChart extends Component {
     }
 
     componentDidMount() {
+
             fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${store.currentCompanySymbol}&apikey=${apiKey}`)
             .then((res) => res.json())
-            .then((data) => {
-                const objectKeys = (Object.keys(data["Time Series (Daily)"])).slice(0,30).sort((a,b)=> (a > b ? 1 : -1))
-                const objectData = (Object.values(data["Time Series (Daily)"]))
-                const mappedData = objectData.map((closeData) => closeData["4. close"]).slice(0,30).reverse()
-                console.log(mappedData)
+            .then(data => console.log(data))
+            // .then((data) => {
+            //     const objectKeys = (Object.keys(data["Time Series (Daily)"])).slice(0,30).sort((a,b)=> (a > b ? 1 : -1))
+            //     const objectData = (Object.values(data["Time Series (Daily)"]))
+            //     const mappedData = objectData.map((closeData) => closeData["4. close"]).slice(0,30).reverse()
+            //     console.log(mappedData)
 
                 
                 
-                this.setState({ 
-                    chartData: {
-                        labels: objectKeys,
-                        datasets: [
-                            {
-                                label: '30 Day, Daily Historical Data',
-                                data: mappedData,
-                                fill: false,
-                                backgroundColor: 'rgb(54, 162, 235)',
-                                borderColor: 'rgba(54, 162, 235, 0.2)',
-                            },
-                        ]
-                    }
-                })
-            })
+            //     this.setState({ 
+            //         chartData: {
+            //             labels: objectKeys,
+            //             datasets: [
+            //                 {
+            //                     label: '30 Day, Daily Historical Data',
+            //                     data: mappedData,
+            //                     fill: false,
+            //                     backgroundColor: 'rgb(54, 162, 235)',
+            //                     borderColor: 'rgba(54, 162, 235, 0.2)',
+            //                 },
+            //             ]
+            //         }
+            //     })
+            // })
     }
 
     render() {

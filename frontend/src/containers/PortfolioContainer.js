@@ -3,7 +3,7 @@ import store from "../store"
 import { Portfolio } from "../components/Portfolio"
 import Table from 'react-bootstrap/Table';
 
-export default class Portfolio extends Component {
+export default class PortfolioContainer extends Component {
     state = {
         portfolio: store.currentPortfolio
     };

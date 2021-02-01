@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { CompanyView } from '../components/CompanyOverview';
+import { CompanyOverview } from '../components/CompanyOverview';
 import { store } from '../store';
 
 
@@ -16,7 +16,7 @@ export default class CompanyContainer extends Component {
         return (
             <>
                 {this.state.selectedCompany.map((company) => (
-                    <CompanyView
+                    <CompanyOverview
                         key={uuidv4()}
                         id={uuidv4()}
                         symbol={company["Symbol"]}

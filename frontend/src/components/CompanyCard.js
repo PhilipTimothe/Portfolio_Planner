@@ -1,9 +1,9 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export function Company(props) {
+export function CompanyCard(props) {
     return ( 
         <>
             <Card id={props.id} style={{ width: '30rem', margin: '1rem auto' }} >
@@ -15,9 +15,9 @@ export function Company(props) {
                         Region: {props.companyRegion} <br/>
                         Currency: {props.companyCurrency} <br/>
                     </Card.Text>
-                    {/* <Link to={`/${props.id}`}> */}
+                    <Link to={`/company-overview/${props.id}`}>
                         <Button variant="dark" onClick={(e) => props.handleExploreClick(props, e)}> Explore </Button>{' '}
-                    {/* </Link> */}
+                    </Link>
                 </Card.Body>
             </Card>
         </>
