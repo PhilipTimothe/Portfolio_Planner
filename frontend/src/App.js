@@ -9,12 +9,14 @@ import Nav from 'react-bootstrap/Nav';
 function App() {
   return (
       <div>
-        <Navbar bg="dark" variant="dark">
+        <Navbar fixed="top" bg="dark" variant="dark">
           <Navbar.Brand href="#home">Portfolio Planner</Navbar.Brand>
           <Nav className="mr-auto"></Nav>
           <Button variant="outline-info" className="mr-sm-2">Home</Button> 
+          <Button variant="outline-info" className="mr-sm-2">Portfolio</Button>
         </Navbar>
         <br />
+        <br/>
         <CompanySearchContainer />
       </div>
     // <Router>

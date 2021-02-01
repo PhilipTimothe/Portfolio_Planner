@@ -18,7 +18,6 @@ export function Company(props) {
                     {/* <Link to={`/${props.id}`}> */}
                         <Button variant="dark" onClick={(e) => props.handleExploreClick(props, e)}> Explore </Button>{' '}
                     {/* </Link> */}
-                    <Button variant="dark" > Add to Portfolio </Button>
                 </Card.Body>
             </Card>
         </>

@@ -53,7 +53,7 @@ export default class CompanySearchForm extends Component {
                         sector={company["Sector"]}
                         address={company["Address"]}
                         description={company["Description"]}
-                        // handleExploreClick={this.handleCompanySelection}
+                        handleAddToPortfolio={this.handlePortfolio}
                     />
                 ))}
             </>
@@ -104,6 +104,11 @@ export default class CompanySearchForm extends Component {
                 console.log(store.currentCompanySymbol)
             })
             
+    }
+
+    handlePortfolio(companyInfo) {
+        store.currentPortfolio.push(companyInfo);
+        console.log(store.currentPortfolio)
     }
 
     render() {

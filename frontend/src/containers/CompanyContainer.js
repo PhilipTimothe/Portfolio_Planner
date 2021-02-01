@@ -28,10 +28,17 @@ export default class CompanyContainer extends Component {
                         country={company["Country"]}
                         sector={company["Sector"]}
                         address={company["Address"]}
-                        description={company["Description"]} />
+                        description={company["Description"]} 
+                        handleAddToPortfolio={this.handlePortfolio}
+                    />
                 ))}
             </>
         );
+    }
+
+    handlePortfolio(companyInfo) {
+        store.currentPortfolio.push(companyInfo);
+        console.log(store.currentPortfolio)
     }
 
     render() {

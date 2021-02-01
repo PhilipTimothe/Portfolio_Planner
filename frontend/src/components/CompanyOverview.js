@@ -25,8 +25,7 @@ export function CompanyView(props) {
                             <br/>
                             Description: {props.description} <br/>
                         </Card.Text>
-                        {/* <Button variant="dark" onClick={(e) => props.handleExploreClick(props, e)}> Explore </Button>{' '} */}
-                        <Button variant="dark" > Add to Portfolio </Button>
+                        <Button variant="dark" onClick={(e) => props.handleAddToPortfolio(props, e)}> Add to Portfolio </Button>{' '}
                     </Card.Body>
                 </Card>
             </Tab>
