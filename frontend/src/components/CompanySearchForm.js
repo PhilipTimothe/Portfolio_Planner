@@ -32,3 +32,5 @@ export function SearchForm(props) {
         </>
     )
 }
+
+// Validation isn't invoking properly

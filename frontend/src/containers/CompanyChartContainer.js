@@ -35,8 +35,8 @@ export default class CompanyChart extends Component {
             fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${store.currentCompanySymbol}&apikey=${apiKey}`)
             .then((res) => res.json())
             .then((data) => {
-                const objectKeys = (Object.keys(data["Time Series (Daily)"]))
-                const objectData = (Object.values(data["Time Series (Daily)"]))
+                const objectKeys = (Object.keys(data["Time Series (Daily)"])).slice(0,30)
+                const objectData = (Object.values(data["Time Series (Daily)"])).slice(0,30)
                 const mappedData = objectData.map((closeData) => closeData["4. close"])
                 console.log(objectKeys)
                 
@@ -45,7 +45,7 @@ export default class CompanyChart extends Component {
                         labels: objectKeys,
                         datasets: [
                             {
-                                label: '100 Day, Daily Historical Data',
+                                label: '30 Day, Daily Historical Data',
                                 data: mappedData,
                                 fill: false,
                                 backgroundColor: 'rgb(54, 162, 235)',
@@ -66,4 +66,4 @@ export default class CompanyChart extends Component {
     }
 }
 
-// Object.keys(data["Time Series (Daily)"])
+// When loading the page from scratch the chart data does not load properly.
