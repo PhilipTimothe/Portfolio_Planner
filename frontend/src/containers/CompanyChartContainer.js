@@ -35,10 +35,12 @@ export default class CompanyChart extends Component {
             fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${store.currentCompanySymbol}&apikey=${apiKey}`)
             .then((res) => res.json())
             .then((data) => {
-                const objectKeys = (Object.keys(data["Time Series (Daily)"])).slice(0,30)
-                const objectData = (Object.values(data["Time Series (Daily)"])).slice(0,30)
-                const mappedData = objectData.map((closeData) => closeData["4. close"])
-                console.log(objectKeys)
+                const objectKeys = (Object.keys(data["Time Series (Daily)"])).slice(0,30).sort((a,b)=> (a > b ? 1 : -1))
+                const objectData = (Object.values(data["Time Series (Daily)"]))
+                const mappedData = objectData.map((closeData) => closeData["4. close"]).slice(0,30).reverse()
+                console.log(mappedData)
+
+                
                 
                 this.setState({ 
                     chartData: {
