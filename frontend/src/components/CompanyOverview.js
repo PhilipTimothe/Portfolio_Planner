@@ -1,4 +1,5 @@
 import React from 'react';
+import CompanyChart from '../containers/CompanyChartContainer'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Tabs from 'react-bootstrap/Tabs';
@@ -32,10 +33,10 @@ export function CompanyView(props) {
             <Tab eventKey="Data Chart" title="Data Chart">
                 <Card style={{ width: '50rem', margin: '1rem auto' }} >
                     <Card.Body >
-                        <Card.Title>Data Chart</Card.Title>
+                        <Card.Title>{props.name}</Card.Title>
                         <Card.Text>
+                            <CompanyChart />
                         </Card.Text>
-                        <Button variant="dark" > Add to Portfolio </Button>
                     </Card.Body>
                 </Card>
             </Tab>

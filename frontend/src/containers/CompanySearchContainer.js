@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { SearchForm } from '../components/CompanySearchForm';
 import { Company } from '../components/CompanyCard';
 import { CompanyView } from '../components/CompanyOverview';
-// import { store } from '../store';
+import { store } from '../store';
 
 // Have to figure out how to get routed page to render.
 
@@ -91,18 +91,17 @@ export default class CompanySearchForm extends Component {
         this.setState({
             currentCompany: []
         })
-
         event.preventDefault();
         fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${companyInfo["companySymbol"]}&apikey=${apiKey}`)
             .then((res) => res.json())
             .then(data => // store.currentCompany.push(Object(data)));
                 {
                 const company = Object(data);
-                store.currentCompanySymbol.push(company["Symbol"])
                 this.setState({ 
                     currentCompany: [...this.state.currentCompany, company]
                 })
-                console.log(this.state.currentCompany)
+                store.currentCompanySymbol += company["Symbol"]
+                console.log(store.currentCompanySymbol)
             })
             
     }
