@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { CompanySearchForm } from '../components/CompanySearchForm';
 import { CompanyCard } from '../components/CompanyCard';
-import { CompanyOverview } from '../components/CompanyOverview';
+import CompanyContainer from "../containers/CompanyContainer";
 import { store } from '../store';
 
 // Have to figure out how to get routed page to render.
@@ -29,9 +29,18 @@ export default class CompanySearchContainer extends Component {
                         companyType={company["3. type"]}
                         companyRegion={company["4. region"]}
                         companyCurrency={company["8. currency"]}
-                        handleExploreClick={this.handleCompanySelection}
+                        handleExploreClick={this.handleCompany}
                     />
                 ))}
+            </>
+        )
+    }
+
+    handleCompany = (companyInfo) => {
+        store.currentCompany.push(companyInfo)
+        return (
+            <>
+                <CompanyContainer />
             </>
         )
     }
@@ -94,16 +103,15 @@ export default class CompanySearchContainer extends Component {
     //     event.preventDefault();
     //     fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${companyInfo["companySymbol"]}&apikey=${apiKey}`)
     //         .then((res) => res.json())
-    //         .then(data => // store.currentCompany.push(Object(data)));
-    //             {
+    //         .then(data => { store.currentCompany.push(Object(data)) 
+    //             // {
     //             const company = Object(data);
-    //             this.setState({ 
-    //                 currentCompany: [...this.state.currentCompany, company]
-    //             })
+    //             // this.setState({ 
+    //             //     currentCompany: [...this.state.currentCompany, company]
+    //             // })
     //             store.currentCompanySymbol += company["Symbol"]
     //             // console.log(store.currentCompanySymbol)
     //         })
-            
     // }
 
     handlePortfolio(companyInfo) {
@@ -121,7 +129,7 @@ export default class CompanySearchContainer extends Component {
                     onChange={this.handleSearchFormChange}
                 />
                 <div>
-                    {this.state.currentCompany.length > 0 && this.renderSelectedCompany()}
+                    {/* {this.state.currentCompany.length > 0 && this.renderSelectedCompany()} */}
                     {this.renderCompanyList()}
                 </div>
             </>
