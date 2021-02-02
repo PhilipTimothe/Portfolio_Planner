@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { CompanyOverview } from '../components/CompanyOverview';
+import CompanyOverview from '../components/CompanyOverview';
 import { store } from '../store';
 
 const apiKey = process.env.API_KEY;

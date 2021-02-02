@@ -4,12 +4,12 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-import { store } from '../store'
+import {connect} from 'react-redux'
 
-export function CompanyOverview(props) {
+function CompanyOverview(props) {
     return ( 
         <>
-        <Tabs id={props.id} style={{ width: '50rem', margin: '1rem auto' }} defaultActiveKey="home" transition={false}>
+        {/* <Tabs id={props.id} style={{ width: '50rem', margin: '1rem auto' }} defaultActiveKey="home" transition={false}>
             <Tab eventKey="home" title="Company Overview">
                 <Card style={{ width: '50rem', margin: '1rem auto' }} >
                     <Card.Body >
@@ -40,7 +40,13 @@ export function CompanyOverview(props) {
                     </Card.Body>
                 </Card>
             </Tab>
-        </Tabs>
+        </Tabs> */}
         </>
     )
 }
+
+const mapStateToProps = (state) => ({
+    currentCompany: state.currentCompany
+})
+
+export default connect(mapStateToProps)(CompanyOverview)

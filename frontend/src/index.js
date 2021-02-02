@@ -4,12 +4,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createStore, compose, applyMiddleware} from 'redux'
+import { Provider } from "react-redux";
+import logger from "redux-logger"
+import thunk from 'redux-thunk'
+import {reducer} from './redux/reducer'
 require('dotenv').config();
 
+const store = createStore(reducer, compose(
+  applyMiddleware(thunk, logger),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+)
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
