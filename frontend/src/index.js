@@ -11,10 +11,12 @@ import thunk from 'redux-thunk'
 import {reducer} from './redux/reducer'
 require('dotenv').config();
 
-const store = createStore(reducer, compose(
-  applyMiddleware(thunk, logger),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-)
+const store = createStore(
+  reducer, 
+  compose(
+    applyMiddleware(thunk, logger),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+  )
 
 ReactDOM.render(
   <Provider store={store}>

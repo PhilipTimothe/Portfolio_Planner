@@ -9,7 +9,7 @@ import {connect} from 'react-redux'
 function CompanyOverview(props) {
     return ( 
         <>
-        {/* <Tabs id={props.id} style={{ width: '50rem', margin: '1rem auto' }} defaultActiveKey="home" transition={false}>
+        <Tabs id={props.id} style={{ width: '50rem', margin: '1rem auto' }} defaultActiveKey="home" transition={false}>
             <Tab eventKey="home" title="Company Overview">
                 <Card style={{ width: '50rem', margin: '1rem auto' }} >
                     <Card.Body >
@@ -35,12 +35,12 @@ function CompanyOverview(props) {
                     <Card.Body >
                         <Card.Title>{props.name}</Card.Title>
                         <Card.Text>
-                            {store.currentCompanySymbol && <CompanyChartContainer />}
+                            {this.props.currentCompanySymbol && <CompanyChartContainer />}
                         </Card.Text>
                     </Card.Body>
                 </Card>
             </Tab>
-        </Tabs> */}
+        </Tabs>
         </>
     )
 }

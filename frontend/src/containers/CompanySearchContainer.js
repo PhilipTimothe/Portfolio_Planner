@@ -26,7 +26,7 @@ export default class CompanySearchContainer extends Component {
                         companyType={company["3. type"]}
                         companyRegion={company["4. region"]}
                         companyCurrency={company["8. currency"]}
-                        company={company}
+                        company={company["1. symbol"]}
                     />
                 ))}
             </>
@@ -70,7 +70,6 @@ export default class CompanySearchContainer extends Component {
                     onChange={this.handleSearchFormChange}
                 />
                 <div>
-                    {/* {this.state.currentCompany.length > 0 && this.renderSelectedCompany()} */}
                     {this.renderCompanyList()}
                 </div>
             </>
