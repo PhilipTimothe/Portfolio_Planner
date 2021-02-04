@@ -35,7 +35,7 @@ function CompanyOverview(props) {
                     <Card.Body >
                         <Card.Title>{props.name}</Card.Title>
                         <Card.Text>
-                            {this.props.currentCompanySymbol && <CompanyChartContainer />}
+                            {props.symbol && <CompanyChartContainer />}
                         </Card.Text>
                     </Card.Body>
                 </Card>
@@ -46,7 +46,7 @@ function CompanyOverview(props) {
 }
 
 const mapStateToProps = (state) => ({
-    currentCompany: state.currentCompany
+    currentCompanySymbol: state.currentCompanySymbol
 })
 
 export default connect(mapStateToProps)(CompanyOverview)

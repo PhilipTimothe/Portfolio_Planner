@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Line } from 'react-chartjs-2';
+import {connect} from 'react-redux'
 
 const apiKey = process.env.API_KEY;
 
-export default class CompanyChartContainer extends Component {
+class CompanyChartContainer extends Component {
         state = {
             chartData: {
                 labels: [],
@@ -45,7 +46,7 @@ export default class CompanyChartContainer extends Component {
                         labels: objectKeys,
                         datasets: [
                             {
-                                label: '30 Day, Daily Historical Data',
+                                label: '30 Day Historical Data',
                                 data: mappedData,
                                 fill: false,
                                 backgroundColor: 'rgb(54, 162, 235)',
@@ -65,5 +66,11 @@ export default class CompanyChartContainer extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+    currentCompanySymbol: state.currentCompanySymbol,
+})
+
+export default connect(mapStateToProps) (CompanyChartContainer)
 
 // When loading the page from scratch the chart data does not load properly.

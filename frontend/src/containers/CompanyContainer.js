@@ -4,8 +4,6 @@ import {connect} from 'react-redux'
 import { getCompany } from '../redux/actionCreator'
 import CompanyOverview from '../components/CompanyOverview';
 
-const apiKey = process.env.API_KEY;
-
 class CompanyContainer extends Component {
     state = {
         currentCompany: [],
@@ -15,7 +13,7 @@ class CompanyContainer extends Component {
 
         return (
             <>
-                {/* <CompanyOverview
+                <CompanyOverview
                     key={uuidv4()}
                     id={uuidv4()}
                     symbol={this.props.currentCompany["Symbol"]}
@@ -29,40 +27,23 @@ class CompanyContainer extends Component {
                     address={this.props.currentCompany["Address"]}
                     description={this.props.currentCompany["Description"]} 
                     // handleAddToPortfolio={this.handlePortfolio}
-                /> */}
+                />
             </>
         );
     }
 
     componentDidMount() {
         this.props.getCompany(this.props.currentCompanySymbol)
-        // return (dispatch) => {
-        // fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${this.props.currentCompanySymbol}&apikey=${apiKey}`)
-        //     .then((res) => res.json())
-        //     .then(data =>  
-        //         {
-        //             console.log(Object(data))
-        //         const company = Object(data);
-        //         dispatch({ 
-        //             type: "GET_COMPANY",
-        //             payload: { 
-        //                 company
-        //             },
-        //         })
-        //     })
-        // }
     }
 
     // handlePortfolio(companyInfo) {
     // }
 
     render() {
-        console.log(this.props.currentCompanySymbol)
-
         return (
             <>
                 <div>
-                    {this.renderSelectedCompany()}
+                    {this.props.currentCompany && this.renderSelectedCompany()}
                 </div>
             </>
         );
@@ -78,4 +59,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {getCompany}) (CompanyContainer)
 
-// this.props.currentCompany && 
+// repeatative rendering crashes app
+// After Company Overview renders and then user links to home page, user cant navigate back to company overview

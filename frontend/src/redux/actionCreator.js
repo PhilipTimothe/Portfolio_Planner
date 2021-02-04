@@ -10,8 +10,6 @@ export const getCompany = (symbol) => {
             .then((res) => res.json())
             .then(data =>  {
                 const company = Object(data);
-                console.log(Object(data))
-
                 dispatch({ 
                     type: "GET_COMPANY",
                     payload: { 
