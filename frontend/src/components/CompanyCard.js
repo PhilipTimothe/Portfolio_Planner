@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import {connect} from 'react-redux'
-import {setCompany} from '../redux/actionCreator'
+import {setSymbol} from '../redux/actionCreator'
 
 function CompanyCard(props) {
     // const {name, type} = props.company
@@ -18,8 +18,8 @@ function CompanyCard(props) {
                         Region: {props.companyRegion} <br/>
                         Currency: {props.companyCurrency} <br/>
                     </Card.Text>
-                    <Link to={`/company-overview/${props.id}`}>
-                        <Button variant="dark" onClick={() => props.setCompany(props.company)}> Explore </Button>{' '}
+                    <Link to={`/company-overview/${props.companySymbol}`}>
+                        <Button variant="dark" > Explore </Button>{' '}
                     </Link>
                 </Card.Body>
             </Card>
@@ -27,6 +27,6 @@ function CompanyCard(props) {
     )
 }
 
+// onClick={() => props.setSymbol(props.company)}
 
-
-export default connect(null, {setCompany})(CompanyCard)
+export default connect(null, {setSymbol})(CompanyCard)

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CompanyChartContainer from '../containers/CompanyChartContainer'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -7,10 +7,13 @@ import Tab from 'react-bootstrap/Tab';
 import {connect} from 'react-redux'
 
 function CompanyOverview(props) {
+    const [key, setKey] = useState('overview');
+    
     return ( 
         <>
-        <Tabs id={props.id} style={{ width: '50rem', margin: '1rem auto' }} defaultActiveKey="home" transition={false}>
-            <Tab eventKey="home" title="Company Overview">
+        <Tabs id={props.id} style={{ width: '50rem', margin: '1rem auto' }} unmountOnExit activeKey={key}
+      onSelect={(k) => setKey(k)}>
+            <Tab eventKey="overview" title="Company Overview">
                 <Card style={{ width: '50rem', margin: '1rem auto' }} >
                     <Card.Body >
                         <Card.Title>{props.name}</Card.Title>
@@ -30,12 +33,12 @@ function CompanyOverview(props) {
                     </Card.Body>
                 </Card>
             </Tab>
-            <Tab eventKey="Data Chart" title="Data Chart">
+            <Tab eventKey="datachart" title="Data Chart">
                 <Card style={{ width: '50rem', margin: '1rem auto' }} >
                     <Card.Body >
                         <Card.Title>{props.name}</Card.Title>
                         <Card.Text>
-                            {props.symbol && <CompanyChartContainer />}
+                            {<CompanyChartContainer id={props.param} />}
                         </Card.Text>
                     </Card.Body>
                 </Card>
@@ -46,7 +49,7 @@ function CompanyOverview(props) {
 }
 
 const mapStateToProps = (state) => ({
-    currentCompanySymbol: state.currentCompanySymbol
+    currentCompany: state.currentCompany,
 })
 
 export default connect(mapStateToProps)(CompanyOverview)

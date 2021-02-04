@@ -9,7 +9,7 @@ class CompanyContainer extends Component {
         currentCompany: [],
     };
 
-    renderSelectedCompany() {
+    renderSelectedCompany(id) {
 
         return (
             <>
@@ -26,6 +26,7 @@ class CompanyContainer extends Component {
                     sector={this.props.currentCompany["Sector"]}
                     address={this.props.currentCompany["Address"]}
                     description={this.props.currentCompany["Description"]} 
+                    param={id}
                     // handleAddToPortfolio={this.handlePortfolio}
                 />
             </>
@@ -33,17 +34,19 @@ class CompanyContainer extends Component {
     }
 
     componentDidMount() {
-        this.props.getCompany(this.props.currentCompanySymbol)
+        const { id } = this.props.match.params;
+        this.props.getCompany(id)
     }
 
     // handlePortfolio(companyInfo) {
     // }
 
     render() {
+        const { id } = this.props.match.params;
         return (
             <>
                 <div>
-                    {this.props.currentCompany && this.renderSelectedCompany()}
+                    {this.props.currentCompany && this.renderSelectedCompany(id)}
                 </div>
             </>
         );

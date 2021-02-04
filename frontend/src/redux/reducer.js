@@ -6,7 +6,7 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case "SET_COMPANY":
+        case "SET_SYMBOL":
             return {
                 ...state, currentCompanySymbol: action.payload.companySymbol
             };

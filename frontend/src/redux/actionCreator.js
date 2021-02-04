@@ -1,5 +1,5 @@
-export const setCompany = (companySymbol) => ({
-    type: "SET_COMPANY",
+export const setSymbol = (companySymbol) => ({
+    type: "SET_SYMBOL",
     payload: {companySymbol: companySymbol}
 })
 
