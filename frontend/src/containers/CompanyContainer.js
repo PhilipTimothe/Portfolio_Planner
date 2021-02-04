@@ -6,7 +6,6 @@ import CompanyOverview from '../components/CompanyOverview';
 
 class CompanyContainer extends Component {
     state = {
-        currentCompany: [],
     };
 
     renderSelectedCompany(id) {
@@ -26,8 +25,8 @@ class CompanyContainer extends Component {
                     sector={this.props.currentCompany["Sector"]}
                     address={this.props.currentCompany["Address"]}
                     description={this.props.currentCompany["Description"]} 
+                    company={this.props.currentCompany}
                     param={id}
-                    // handleAddToPortfolio={this.handlePortfolio}
                 />
             </>
         );

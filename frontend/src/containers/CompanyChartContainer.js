@@ -40,7 +40,6 @@ export default class CompanyChartContainer extends Component {
             fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${id}&apikey=${apiKey}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(Object(data));
                 const objectKeys = (Object.keys(data["Time Series (Daily)"])).slice(0,30).sort((a,b)=> (a > b ? 1 : -1))
                 const objectData = (Object.values(data["Time Series (Daily)"]))
                 const mappedData = objectData.map((closeData) => closeData["4. close"]).slice(0,30).reverse()

@@ -2,10 +2,8 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
-import {connect} from 'react-redux'
-import {setSymbol} from '../redux/actionCreator'
 
-function CompanyCard(props) {
+export default function CompanyCard(props) {
     // const {name, type} = props.company
     return ( 
         <>
@@ -26,7 +24,3 @@ function CompanyCard(props) {
         </>
     )
 }
-
-// onClick={() => props.setSymbol(props.company)}
-
-export default connect(null, {setSymbol})(CompanyCard)

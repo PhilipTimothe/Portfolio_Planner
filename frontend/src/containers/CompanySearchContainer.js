@@ -26,7 +26,7 @@ export default class CompanySearchContainer extends Component {
                         companyType={company["3. type"]}
                         companyRegion={company["4. region"]}
                         companyCurrency={company["8. currency"]}
-                        company={company["1. symbol"]}
+                        // company={company["1. symbol"]}
                     />
                 ))}
             </>

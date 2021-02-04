@@ -1,7 +1,7 @@
-export const setSymbol = (companySymbol) => ({
-    type: "SET_SYMBOL",
-    payload: {companySymbol: companySymbol}
-})
+// export const setSymbol = (companySymbol) => ({
+//     type: "SET_SYMBOL",
+//     payload: {companySymbol: companySymbol}
+// })
 
 export const getCompany = (symbol) => {
     return (dispatch) => {
@@ -19,3 +19,8 @@ export const getCompany = (symbol) => {
             })
     }
 }
+
+export const setPortfolio = (company) => ({
+    type: "SET_PORTFOLIO",
+    payload: {company}
+})

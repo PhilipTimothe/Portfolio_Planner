@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import CompanyChartContainer from '../containers/CompanyChartContainer'
+import { Link } from "react-router-dom";
+import {connect} from 'react-redux'
+import { setPortfolio } from '../redux/actionCreator'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-import {connect} from 'react-redux'
 
 function CompanyOverview(props) {
     const [key, setKey] = useState('overview');
@@ -29,7 +31,10 @@ function CompanyOverview(props) {
                             <br/>
                             Description: {props.description} <br/>
                         </Card.Text>
-                        <Button variant="dark" onClick={(e) => props.handleAddToPortfolio(props, e)}> Add to Portfolio </Button>{' '}
+                            <Button variant="dark" onClick={() => props.setPortfolio(props.company)}> Add to Portfolio </Button>{' '}
+                            <Link to="/">
+                                <Button variant="dark" > Start a New Search </Button>{' '}
+                            </Link>
                     </Card.Body>
                 </Card>
             </Tab>
@@ -48,8 +53,4 @@ function CompanyOverview(props) {
     )
 }
 
-const mapStateToProps = (state) => ({
-    currentCompany: state.currentCompany,
-})
-
-export default connect(mapStateToProps)(CompanyOverview)
+export default connect(null, {setPortfolio}) (CompanyOverview)

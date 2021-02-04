@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CompanySearchContainer from './containers/CompanySearchContainer';
 import CompanyContainer from "./containers/CompanyContainer";
+import PortfolioContainer from "./containers/PortfolioContainer";
 import { NavbarComponent } from './components/NavbarComponent'
 
 
@@ -12,6 +13,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={CompanySearchContainer} />
         <Route path="/company-overview/:id" exact component={CompanyContainer} />
+        <Route path="/portfolio" exact component={PortfolioContainer} />
       </Switch>
     </Router>
   );
