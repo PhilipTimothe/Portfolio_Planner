@@ -20,6 +20,23 @@ export const getCompany = (symbol) => {
     }
 }
 
+export const getPortfolio = () => {
+    return (dispatch) => {
+        fetch(`http://localhost:3000/companies`)
+            .then((res) => res.json())
+            .then(data =>  {
+                const company = Object(data);
+                dispatch({ 
+                    type: "GET_PORTFOLIO",
+                    payload: { 
+                        company
+                    },
+                })
+            })
+    }
+}
+
+// Add companies to portfolio
 export const setPortfolio = (company) => ({
     type: "SET_PORTFOLIO",
     payload: {company}

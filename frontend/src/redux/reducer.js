@@ -12,6 +12,11 @@ export const reducer = (state = initialState, action) => {
                 ...state, currentCompany: {id: uuidv4(), ...action.payload.company},
             }
 
+        case "GET_PORTFOLIO":
+            return {
+                ...state, currentPortfolio: [...state.currentPortfolio ,action.payload.company]
+            }    
+
         case "SET_PORTFOLIO":
             return {
                 ...state, currentPortfolio: [...state.currentPortfolio ,action.payload.company]
