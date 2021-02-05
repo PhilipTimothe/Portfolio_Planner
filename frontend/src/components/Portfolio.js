@@ -1,13 +1,19 @@
 import React, { useState }from 'react';
+import { connect } from 'react-redux'
+import { deleteCompany } from '../redux/actionCreator'
 import Table from 'react-bootstrap/Table';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-export function Portfolio(props) {
+function Portfolio(props) {
     const [show, setShow] = useState(false);
+    const [companyId, setCompanyId] = useState({});
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = (id) => {
+        setShow(true);
+        setCompanyId(id);
+    }
     
     return ( 
         <>
@@ -20,9 +26,9 @@ export function Portfolio(props) {
                     <th>Company Region</th>
                     </tr>
                 </thead>
-                    {props.companies.map((company, index) => {
+                    {props.companies.map((company) => {
                         return (
-                            <tbody key={index} onClick={handleShow}>
+                            <tbody key={company["id"]} onClick={() => handleShow(company["id"])}>
                                 <tr>
                                 <td>{company["Name"]}</td>
                                 <td>{company["Symbol"]}</td>
@@ -32,21 +38,23 @@ export function Portfolio(props) {
                             </tbody>  
                         )
                     })}
-            </Table>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>Delete</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Body>Are you sure you would like to remove this company from your portfolio?</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="outline-info" onClick={handleClose}>
-                        Save Changes
+                    <Button variant="outline-info"  onClick={() => props.deleteCompany(companyId)}>
+                        Delete
                     </Button>
                 </Modal.Footer>
             </Modal>
+            </Table>
         </>
     )
 }
+
+export default connect(null, {deleteCompany}) (Portfolio)

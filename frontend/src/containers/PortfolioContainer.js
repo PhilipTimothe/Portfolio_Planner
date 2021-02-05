@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Portfolio } from "../components/Portfolio"
-import {connect} from 'react-redux'
+import Portfolio from "../components/Portfolio"
+import { connect } from 'react-redux'
 
 class PortfolioContainer extends Component {
     state = {

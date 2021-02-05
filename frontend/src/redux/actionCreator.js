@@ -24,3 +24,8 @@ export const setPortfolio = (company) => ({
     type: "SET_PORTFOLIO",
     payload: {company}
 })
+
+export const deleteCompany = (companyId) => ({
+    type: "DELETE_COMPANY",
+    payload: {companyId}
+})

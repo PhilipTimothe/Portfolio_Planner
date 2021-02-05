@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CompanyChartContainer from '../containers/CompanyChartContainer'
 import { Link } from "react-router-dom";
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { setPortfolio } from '../redux/actionCreator'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
