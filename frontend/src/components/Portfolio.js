@@ -5,16 +5,21 @@ import Table from 'react-bootstrap/Table';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
+
 function Portfolio(props) {
     const [show, setShow] = useState(false);
     const [companyId, setCompanyId] = useState({});
 
     const handleClose = () => setShow(false);
+    const handleDelete = () => {
+        props.deleteCompany(companyId);
+        setShow(false);
+    }
     const handleShow = (id) => {
         setShow(true);
         setCompanyId(id);
     }
-    
+
     return ( 
         <>
             <Table style={{ width: '50rem', margin: '1rem auto' }} striped bordered hover variant="dark">
@@ -47,7 +52,7 @@ function Portfolio(props) {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="outline-info"  onClick={() => props.deleteCompany(companyId)}>
+                    <Button variant="outline-info" onClick={handleDelete} >
                         Delete
                     </Button>
                 </Modal.Footer>
