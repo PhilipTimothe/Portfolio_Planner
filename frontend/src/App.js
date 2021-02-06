@@ -5,7 +5,6 @@ import CompanyContainer from "./containers/CompanyContainer";
 import PortfolioContainer from "./containers/PortfolioContainer";
 import { NavbarComponent } from './components/NavbarComponent'
 
-
 function App() {
   return (
     <Router>
@@ -20,5 +19,3 @@ function App() {
 }
 
 export default App;
-
-// Router is not switching to linked page when action is taking place.

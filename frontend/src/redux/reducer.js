@@ -13,13 +13,25 @@ export const reducer = (state = initialState, action) => {
             }
 
         case "GET_PORTFOLIO":
+            const companies = [...state.currentPortfolio, action.payload.company]
+            const result = Array.from(new Set(companies.map(s => s.id)))
+                .map(id => {
+                    return {
+                        id: id,
+                        Name: companies.find(s => s.id === id).Name,
+                        Symbol: companies.find(s => s.id === id).Symbol,
+                        Industry: companies.find(s => s.id === id).Industry,
+                        Country: companies.find(s => s.id === id).Country
+
+                    };
+                });
             return {
-                ...state, currentPortfolio: [...state.currentPortfolio ,action.payload.company]
+                ...state, currentPortfolio: result
             }    
 
         case "SET_PORTFOLIO":
             return {
-                ...state, currentPortfolio: [...state.currentPortfolio ,action.payload.company]
+                ...state, currentPortfolio: [...state.currentPortfolio, action.payload.company]
             }
 
         case "DELETE_COMPANY":

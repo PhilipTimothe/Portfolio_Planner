@@ -1,8 +1,3 @@
-// export const setSymbol = (companySymbol) => ({
-//     type: "SET_SYMBOL",
-//     payload: {companySymbol: companySymbol}
-// })
-
 export const getCompany = (symbol) => {
     return (dispatch) => {
         const apiKey = process.env.API_KEY;
@@ -20,18 +15,22 @@ export const getCompany = (symbol) => {
     }
 }
 
+
+
 export const getPortfolio = () => {
     return (dispatch) => {
         fetch(`http://localhost:3000/companies`)
             .then((res) => res.json())
             .then(data =>  {
-                const company = Object(data);
-                dispatch({ 
-                    type: "GET_PORTFOLIO",
-                    payload: { 
-                        company
-                    },
-                })
+                // console.log(Object(data))
+                Object(data).map((company) => (
+                    dispatch({ 
+                        type: "GET_PORTFOLIO",
+                        payload: { 
+                            company
+                        },
+                    })
+                ))
             })
     }
 }

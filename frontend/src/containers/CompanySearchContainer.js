@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { CompanySearchForm } from '../components/CompanySearchForm';
 import CompanyCard from '../components/CompanyCard';
+import { connect } from 'react-redux'
+import { getPortfolio } from '../redux/actionCreator'
 
 // Have to figure out how to get routed page to render.
 
 const apiKey = process.env.API_KEY;
 
-export default class CompanySearchContainer extends Component {
+class CompanySearchContainer extends Component {
     state = {
           symbol: "",
           searchResultsList: [],
           validated: false,
+          initialRender: true
     }
 
     renderCompanyList() {
@@ -32,6 +35,13 @@ export default class CompanySearchContainer extends Component {
             </>
         )
     }
+
+    // componentDidMount() {
+    //     if (this.state.initialRender !== null) {
+    //         this.props.getPortfolio()
+    //         this.setState({ initialRender: true })
+    //     }
+    // }
 
     handleSearchFormChange = event => {
         this.setState({
@@ -76,3 +86,5 @@ export default class CompanySearchContainer extends Component {
         );
     };
 }
+
+export default connect(null, {getPortfolio}) (CompanySearchContainer)
