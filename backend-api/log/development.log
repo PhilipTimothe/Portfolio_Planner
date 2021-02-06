@@ -1559,3 +1559,153 @@ Processing by CompaniesController#index as */*
 Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1063)
 
 
+Started GET "/companies" for ::1 at 2021-02-06 08:51:13 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 1.1ms | Allocations: 6530)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 08:51:16 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1080)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 08:51:32 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (1.0ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 13:51:32.339208"], ["updated_at", "2021-02-06 13:51:32.339208"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 4.0ms | Allocations: 2802)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 09:03:29 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#create as JSON
+  Parameters: {"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (1.1ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 14:03:29.976059"], ["updated_at", "2021-02-06 14:03:29.976059"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 3.6ms | Allocations: 7432)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:04:03 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1407)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:04:07 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 1355)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:04:16 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 1355)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:04:33 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 1355)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:04:41 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1338)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 09:04:56 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"Name"=>"Sprint Corporation", "Symbol"=>"S", "Industry"=>"Telecom Services", "Country"=>"USA", "company"=>{"Name"=>"Sprint Corporation", "Symbol"=>"S", "Industry"=>"Telecom Services", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Sprint Corporation"], ["Symbol", "S"], ["Industry", "Telecom Services"], ["Country", "USA"], ["created_at", "2021-02-06 14:04:56.048117"], ["updated_at", "2021-02-06 14:04:56.048117"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 1.6ms | Allocations: 2577)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:04:58 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.0ms | Allocations: 1475)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:05:40 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1473)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:10:31 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1473)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:10:47 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1473)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:10:51 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1473)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 09:11:04 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"Name"=>"AT&T Inc", "Symbol"=>"T", "Industry"=>"Telecom Services", "Country"=>"USA", "company"=>{"Name"=>"AT&T Inc", "Symbol"=>"T", "Industry"=>"Telecom Services", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "AT&T Inc"], ["Symbol", "T"], ["Industry", "Telecom Services"], ["Country", "USA"], ["created_at", "2021-02-06 14:11:04.999520"], ["updated_at", "2021-02-06 14:11:04.999520"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 2583)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:11:10 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 1616)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 09:12:02 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 1614)
+
+

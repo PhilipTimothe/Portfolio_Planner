@@ -31,7 +31,7 @@ export const reducer = (state = initialState, action) => {
 
         case "SET_PORTFOLIO":
             return {
-                ...state, currentPortfolio: [...state.currentPortfolio, action.payload.company]
+                ...state
             }
 
         case "DELETE_COMPANY":

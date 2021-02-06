@@ -36,10 +36,40 @@ export const getPortfolio = () => {
 }
 
 // Add companies to portfolio
-export const setPortfolio = (company) => ({
-    type: "SET_PORTFOLIO",
-    payload: {company}
-})
+export const setPortfolio = (company) => {
+    return (dispatch) => {
+        const data = {
+            Name: company["Name"],
+            Symbol: company["Symbol"],
+            Industry: company["Industry"],
+            Country: company["Country"]
+        };
+
+        const config = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+        return fetch(`http://localhost:3000/companies`, config)
+                .then(response => response.json())
+                .then((data) => {
+                    dispatch({ 
+                        type: "SET_PORTFOLIO",
+                        payload: { 
+                            data
+                        },
+                    })
+                })
+    }
+}
+
+// ({
+//     type: "SET_PORTFOLIO",
+//     payload: {company}
+// })
 
 export const deleteCompany = (companyId) => ({
     type: "DELETE_COMPANY",
