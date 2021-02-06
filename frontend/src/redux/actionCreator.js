@@ -15,8 +15,6 @@ export const getCompany = (symbol) => {
     }
 }
 
-
-
 export const getPortfolio = () => {
     return (dispatch) => {
         fetch(`http://localhost:3000/companies`)
@@ -39,6 +37,7 @@ export const getPortfolio = () => {
 export const setPortfolio = (company) => {
     return (dispatch) => {
         const data = {
+            id: company["id"],
             Name: company["Name"],
             Symbol: company["Symbol"],
             Industry: company["Industry"],
@@ -68,34 +67,15 @@ export const setPortfolio = (company) => {
 
 export const deleteCompany = (companyId) => {
     return (dispatch) => {
-        const data = {
-            id: companyId
-        };
         const config = {
             method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            },
-            body: JSON.stringify(data),
         };
-        return fetch(`http://localhost:3000/companies/${companyId}`, config)
-                .then(response => response.json())
-                .then((data) => {
-                    dispatch({ 
-                        type: "DELETE_COMPANY",
-                        payload: { 
-                            data
-                        },
-                    })
-                })
+        fetch(`http://localhost:3000/companies/${companyId}`, config)
+            dispatch({ 
+                type: "DELETE_COMPANY",
+                payload: { 
+                    companyId
+                },
+            })
     }
 }
-
-
-
-
-// ({
-//     type: "DELETE_COMPANY",
-//     payload: {companyId}
-// })

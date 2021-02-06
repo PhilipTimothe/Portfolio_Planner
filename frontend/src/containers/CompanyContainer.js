@@ -37,9 +37,6 @@ class CompanyContainer extends Component {
         this.props.getCompany(id)
     }
 
-    // handlePortfolio(companyInfo) {
-    // }
-
     render() {
         const { id } = this.props.match.params;
         return (
@@ -60,6 +57,3 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps, {getCompany}) (CompanyContainer)
-
-// repeatative rendering crashes app
-// After Company Overview renders and then user links to home page, user cant navigate back to company overview

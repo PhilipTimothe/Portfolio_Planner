@@ -2066,3 +2066,1168 @@ Processing by CompaniesController#index as */*
 Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 930)
 
 
+Started GET "/companies" for ::1 at 2021-02-06 12:04:34 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 19.5ms | ActiveRecord: 1.8ms | Allocations: 6395)
+
+
+Started DELETE "/companies/7" for ::1 at 2021-02-06 12:04:42 -0500
+Processing by CompaniesController#destroy as JSON
+  Parameters: {"id"=>"7", "company"=>{"id"=>"7"}}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[36mCompany Destroy (0.6ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+Completed 204 No Content in 24ms (ActiveRecord: 2.0ms | Allocations: 4307)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:05:15 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 808)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:05:18 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 808)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 12:05:32 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (1.0ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 17:05:32.931287"], ["updated_at", "2021-02-06 17:05:32.931287"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 3.6ms | Allocations: 2768)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:05:34 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 930)
+
+
+Started DELETE "/companies/8" for ::1 at 2021-02-06 12:05:42 -0500
+Processing by CompaniesController#destroy as JSON
+  Parameters: {"id"=>"8", "company"=>{"id"=>"8"}}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[36mCompany Destroy (1.4ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 2.8ms | Allocations: 2403)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:06:39 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started DELETE "/companies/8" for ::1 at 2021-02-06 12:06:46 -0500
+Processing by CompaniesController#destroy as JSON
+  Parameters: {"id"=>"8", "company"=>{"id"=>"8"}}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 1005)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/companies_controller.rb:19:in `destroy'
+Started GET "/companies" for ::1 at 2021-02-06 12:07:13 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 792)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:13:24 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 813)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:13:33 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 1.0ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:13:38 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 12:13:48 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 17:13:48.264914"], ["updated_at", "2021-02-06 17:13:48.264914"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 1.6ms | Allocations: 2577)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:13:49 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 930)
+
+
+Started DELETE "/companies/9" for ::1 at 2021-02-06 12:13:51 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[36mCompany Destroy (1.8ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 3.4ms | Allocations: 2418)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:14:40 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 792)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:14:47 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:14:52 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 791)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 12:14:59 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 17:14:59.624879"], ["updated_at", "2021-02-06 17:14:59.624879"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 2579)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:15:01 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms | Allocations: 930)
+
+
+Started DELETE "/companies/10" for ::1 at 2021-02-06 12:15:04 -0500
+Processing by CompaniesController#destroy as JSON
+  Parameters: {"_json"=>10, "id"=>"10", "company"=>{}}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[36mCompany Destroy (0.4ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+Completed 204 No Content in 6ms (ActiveRecord: 1.3ms | Allocations: 2403)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:16:07 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:18:59 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:19:11 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:20:13 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 12:20:20 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (1.8ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 17:20:20.947692"], ["updated_at", "2021-02-06 17:20:20.947692"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 18ms (Views: 1.2ms | ActiveRecord: 6.4ms | Allocations: 2579)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:20:22 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 930)
+
+
+Started DELETE "/companies/11" for ::1 at 2021-02-06 12:20:24 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[36mCompany Destroy (0.5ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+Completed 204 No Content in 15ms (ActiveRecord: 4.3ms | Allocations: 2399)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:20:29 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:20:31 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:21:13 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:21:19 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:22:39 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:22:39 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:23:35 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 12:23:43 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (0.8ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 17:23:43.116207"], ["updated_at", "2021-02-06 17:23:43.116207"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 2577)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:23:44 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 930)
+
+
+Started DELETE "/companies/12" for ::1 at 2021-02-06 12:23:46 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[36mCompany Destroy (0.3ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 12]]
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:19:in `destroy'
+Completed 204 No Content in 4ms (ActiveRecord: 1.2ms | Allocations: 2399)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:23:49 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:23:53 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:23:55 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:23:57 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:32:37 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 11.0ms | ActiveRecord: 0.5ms | Allocations: 816)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 12:32:45 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (1.2ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 17:32:45.012010"], ["updated_at", "2021-02-06 17:32:45.012010"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 21ms (Views: 1.4ms | ActiveRecord: 2.3ms | Allocations: 2579)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 12:32:53 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"Name"=>"Sprint Corporation", "Symbol"=>"S", "Industry"=>"Telecom Services", "Country"=>"USA", "company"=>{"Name"=>"Sprint Corporation", "Symbol"=>"S", "Industry"=>"Telecom Services", "Country"=>"USA"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Sprint Corporation"], ["Symbol", "S"], ["Industry", "Telecom Services"], ["Country", "USA"], ["created_at", "2021-02-06 17:32:53.225871"], ["updated_at", "2021-02-06 17:32:53.225871"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 2577)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:32:54 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 1065)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:32:57 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1063)
+
+
+Started DELETE "/companies/undefined" for ::1 at 2021-02-06 12:33:08 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 1010)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/companies_controller.rb:19:in `destroy'
+Started GET "/companies" for ::1 at 2021-02-06 12:33:08 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1085)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:33:29 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1063)
+
+
+Started DELETE "/companies/undefined" for ::1 at 2021-02-06 12:33:34 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 991)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/companies_controller.rb:19:in `destroy'
+Started GET "/companies" for ::1 at 2021-02-06 12:33:34 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 1062)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:34:13 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1063)
+
+
+Started DELETE "/companies/undefined" for ::1 at 2021-02-06 12:34:15 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 989)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/companies_controller.rb:19:in `destroy'
+Started GET "/companies" for ::1 at 2021-02-06 12:38:05 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 1062)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 12:38:10 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1063)
+
+
+Started DELETE "/companies/undefined" for ::1 at 2021-02-06 12:38:12 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 989)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/companies_controller.rb:19:in `destroy'
+Started GET "/companies" for ::1 at 2021-02-06 12:38:24 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1062)
+
+
+Started DELETE "/companies/undefined" for ::1 at 2021-02-06 12:38:27 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 989)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/companies_controller.rb:19:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies"[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "companies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar, "Symbol" varchar, "Industry" varchar, "Country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210205162220)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-06 17:59:50.087899"], ["updated_at", "2021-02-06 17:59:50.087899"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6162392b752cd338b01db92551eafd3f6a6036eb"], ["created_at", "2021-02-06 17:59:50.096436"], ["updated_at", "2021-02-06 17:59:50.096436"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "companies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar, "Symbol" varchar, "Industry" varchar, "Country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210205162220)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-06 17:59:50.120306"], ["updated_at", "2021-02-06 17:59:50.120306"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-02-06 17:59:50.126936"], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6162392b752cd338b01db92551eafd3f6a6036eb"], ["created_at", "2021-02-06 17:59:50.135312"], ["updated_at", "2021-02-06 17:59:50.135312"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Create (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 17:59:50.157820"], ["updated_at", "2021-02-06 17:59:50.157820"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Create (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Apple Inc"], ["Symbol", "AAPL"], ["Industry", "Consumer Electronics"], ["Country", "USA"], ["created_at", "2021-02-06 17:59:50.162152"], ["updated_at", "2021-02-06 17:59:50.162152"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/companies" for ::1 at 2021-02-06 13:00:58 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 1.1ms | Allocations: 6530)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "companies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar, "Symbol" varchar, "Industry" varchar, "Country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210205162220)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-06 18:02:36.879852"], ["updated_at", "2021-02-06 18:02:36.879852"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6162392b752cd338b01db92551eafd3f6a6036eb"], ["created_at", "2021-02-06 18:02:36.892384"], ["updated_at", "2021-02-06 18:02:36.892384"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "companies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar, "Symbol" varchar, "Industry" varchar, "Country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210205162220)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-06 18:02:36.927478"], ["updated_at", "2021-02-06 18:02:36.927478"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-02-06 18:02:36.938496"], ["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6162392b752cd338b01db92551eafd3f6a6036eb"], ["created_at", "2021-02-06 18:02:36.948157"], ["updated_at", "2021-02-06 18:02:36.948157"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Create (1.0ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 18:02:36.975847"], ["updated_at", "2021-02-06 18:02:36.975847"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Create (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Apple Inc"], ["Symbol", "AAPL"], ["Industry", "Consumer Electronics"], ["Country", "USA"], ["created_at", "2021-02-06 18:02:36.988370"], ["updated_at", "2021-02-06 18:02:36.988370"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Create (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 18:02:59.097882"], ["updated_at", "2021-02-06 18:02:59.097882"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Create (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Apple Inc"], ["Symbol", "AAPL"], ["Industry", "Consumer Electronics"], ["Country", "USA"], ["created_at", "2021-02-06 18:02:59.102436"], ["updated_at", "2021-02-06 18:02:59.102436"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies"[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "companies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar, "Symbol" varchar, "Industry" varchar, "Country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210205162220)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-06 18:03:06.279968"], ["updated_at", "2021-02-06 18:03:06.279968"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6162392b752cd338b01db92551eafd3f6a6036eb"], ["created_at", "2021-02-06 18:03:06.331643"], ["updated_at", "2021-02-06 18:03:06.331643"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "companies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "Name" varchar, "Symbol" varchar, "Industry" varchar, "Country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210205162220)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-06 18:03:06.364688"], ["updated_at", "2021-02-06 18:03:06.364688"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-02-06 18:03:06.375447"], ["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6162392b752cd338b01db92551eafd3f6a6036eb"], ["created_at", "2021-02-06 18:03:06.415945"], ["updated_at", "2021-02-06 18:03:06.415945"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 18:03:06.465889"], ["updated_at", "2021-02-06 18:03:06.465889"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Create (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["Name", "Apple Inc"], ["Symbol", "AAPL"], ["Industry", "Consumer Electronics"], ["Country", "USA"], ["created_at", "2021-02-06 18:03:06.470386"], ["updated_at", "2021-02-06 18:03:06.470386"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/companies" for ::1 at 2021-02-06 13:04:07 -0500
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 14.3ms | ActiveRecord: 1.0ms | Allocations: 6530)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:04:10 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1080)
+
+
+Started DELETE "/companies/undefined" for ::1 at 2021-02-06 13:04:13 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 1508)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/companies_controller.rb:19:in `destroy'
+Started GET "/companies" for ::1 at 2021-02-06 13:12:20 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 42ms (Views: 31.9ms | ActiveRecord: 1.3ms | Allocations: 5815)
+
+
+Started DELETE "/companies/undefined" for ::1 at 2021-02-06 13:12:25 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 730)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Company with 'id'=undefined):
+  
+app/controllers/companies_controller.rb:18:in `destroy'
+Started POST "/companies" for ::1 at 2021-02-06 13:12:55 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"id"=>"b7d06952-8078-4930-9d94-3dd416d3b869", "Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"id"=>"b7d06952-8078-4930-9d94-3dd416d3b869", "Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("id", "Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 0], ["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 18:12:55.517629"], ["updated_at", "2021-02-06 18:12:55.517629"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 5.5ms | Allocations: 2799)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:13:00 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 1202)
+
+
+Started DELETE "/companies/undefined" for ::1 at 2021-02-06 13:13:06 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 622)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Company with 'id'=undefined):
+  
+app/controllers/companies_controller.rb:18:in `destroy'
+Started GET "/companies" for ::1 at 2021-02-06 13:13:11 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1199)
+
+
+Started DELETE "/companies/undefined" for ::1 at 2021-02-06 13:13:18 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 607)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Company with 'id'=undefined):
+  
+app/controllers/companies_controller.rb:18:in `destroy'
+Started GET "/companies" for ::1 at 2021-02-06 13:14:12 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1199)
+
+
+Started DELETE "/companies/2" for ::1 at 2021-02-06 13:14:14 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[36mCompany Destroy (0.7ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 1.5ms | Allocations: 2410)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:14:26 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1065)
+
+
+Started DELETE "/companies/0" for ::1 at 2021-02-06 13:14:28 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"0"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[36mCompany Destroy (0.8ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 0]]
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+Completed 204 No Content in 12ms (ActiveRecord: 1.8ms | Allocations: 2384)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:14:31 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 928)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:20:56 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 950)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:21:02 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 930)
+
+
+Started DELETE "/companies/1" for ::1 at 2021-02-06 13:21:05 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[36mCompany Destroy (0.9ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 2.7ms | Allocations: 2403)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:21:07 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:21:43 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:21:48 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 13:22:10 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"id"=>"0eb38538-d642-4bc2-adec-08cb8e804f10", "Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"id"=>"0eb38538-d642-4bc2-adec-08cb8e804f10", "Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (0.8ms)[0m  [1m[32mINSERT INTO "companies" ("id", "Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 0], ["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 18:22:10.856484"], ["updated_at", "2021-02-06 18:22:10.856484"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 2604)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 13:22:23 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"id"=>"734676b0-9e1d-48a7-8714-14c61e594fe6", "Name"=>"Sprint Corporation", "Symbol"=>"S", "Industry"=>"Telecom Services", "Country"=>"USA", "company"=>{"id"=>"734676b0-9e1d-48a7-8714-14c61e594fe6", "Name"=>"Sprint Corporation", "Symbol"=>"S", "Industry"=>"Telecom Services", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("id", "Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 734676], ["Name", "Sprint Corporation"], ["Symbol", "S"], ["Industry", "Telecom Services"], ["Country", "USA"], ["created_at", "2021-02-06 18:22:23.211386"], ["updated_at", "2021-02-06 18:22:23.211386"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 2602)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:22:24 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 1065)
+
+
+Started DELETE "/companies/734676" for ::1 at 2021-02-06 13:23:07 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"734676"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 734676], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[36mCompany Destroy (0.5ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 734676]]
+Started GET "/companies" for ::1 at 2021-02-06 13:23:07 -0500
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+Completed 204 No Content in 9ms (ActiveRecord: 1.8ms | Allocations: 2717)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.5ms | Allocations: 950)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:23:15 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 928)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:23:52 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 928)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:29:42 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.7ms | Allocations: 950)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:29:48 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 928)
+
+
+Started DELETE "/companies/0" for ::1 at 2021-02-06 13:29:51 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"0"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[36mCompany Destroy (0.4ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 0]]
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+Completed 204 No Content in 11ms (ActiveRecord: 2.1ms | Allocations: 2403)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:29:55 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:29:58 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:30:16 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:31:00 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:31:10 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:31:40 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:31:56 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:33:33 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 13:36:03 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"id"=>"f590d187-c7b6-4ac4-802b-102d4b931f5a", "Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"id"=>"f590d187-c7b6-4ac4-802b-102d4b931f5a", "Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (1.4ms)[0m  [1m[32mINSERT INTO "companies" ("id", "Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 0], ["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 18:36:03.802161"], ["updated_at", "2021-02-06 18:36:03.802161"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 2.8ms | Allocations: 2602)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:36:05 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.7ms | Allocations: 930)
+
+
+Started DELETE "/companies/0" for ::1 at 2021-02-06 13:36:08 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"0"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[36mCompany Destroy (2.1ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 0]]
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+Completed 204 No Content in 9ms (ActiveRecord: 4.7ms | Allocations: 2384)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:36:13 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 791)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:36:40 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 791)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 13:37:29 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"id"=>"fa8e967f-de76-4e85-b29f-2398b54fb527", "Name"=>"Sprint Corporation", "Symbol"=>"S", "Industry"=>"Telecom Services", "Country"=>"USA", "company"=>{"id"=>"fa8e967f-de76-4e85-b29f-2398b54fb527", "Name"=>"Sprint Corporation", "Symbol"=>"S", "Industry"=>"Telecom Services", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (0.7ms)[0m  [1m[32mINSERT INTO "companies" ("id", "Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 0], ["Name", "Sprint Corporation"], ["Symbol", "S"], ["Industry", "Telecom Services"], ["Country", "USA"], ["created_at", "2021-02-06 18:37:29.177742"], ["updated_at", "2021-02-06 18:37:29.177742"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 5.3ms | Allocations: 2600)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:37:31 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 928)
+
+
+Started DELETE "/companies/0" for ::1 at 2021-02-06 13:37:33 -0500
+Processing by CompaniesController#destroy as */*
+  Parameters: {"id"=>"0"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:18:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[36mCompany Destroy (0.4ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 0]]
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:20:in `destroy'
+Completed 204 No Content in 6ms (ActiveRecord: 1.8ms | Allocations: 2384)
+
+
+Started POST "/companies" for ::1 at 2021-02-06 13:39:36 -0500
+Processing by CompaniesController#create as JSON
+  Parameters: {"id"=>"c254542b-fdbf-436d-a98b-a5f20ff9ef54", "Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA", "company"=>{"id"=>"c254542b-fdbf-436d-a98b-a5f20ff9ef54", "Name"=>"Barnes Group Inc", "Symbol"=>"B", "Industry"=>"Specialty Industrial Machinery", "Country"=>"USA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[36mCompany Create (1.4ms)[0m  [1m[32mINSERT INTO "companies" ("id", "Name", "Symbol", "Industry", "Country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 0], ["Name", "Barnes Group Inc"], ["Symbol", "B"], ["Industry", "Specialty Industrial Machinery"], ["Country", "USA"], ["created_at", "2021-02-06 18:39:36.832368"], ["updated_at", "2021-02-06 18:39:36.832368"]]
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/companies_controller.rb:12:in `create'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 2603)
+
+
+Started GET "/companies" for ::1 at 2021-02-06 13:39:48 -0500
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms | Allocations: 930)
+
+

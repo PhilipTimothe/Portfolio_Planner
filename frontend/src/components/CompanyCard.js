@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 
 export default function CompanyCard(props) {
-    // const {name, type} = props.company
+    // const {name, type} = props.company // need to understand destructuring more 
     return ( 
         <>
             <Card id={props.id} style={{ width: '30rem', margin: '1rem auto' }} >

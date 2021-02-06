@@ -49,12 +49,8 @@ function Portfolio(props) {
                 </Modal.Header>
                 <Modal.Body>Are you sure you would like to remove this company from your portfolio?</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="outline-info" onClick={handleDelete} >
-                        Delete
-                    </Button>
+                    <Button variant="secondary" onClick={handleClose}> Close </Button>
+                    <Button variant="outline-info" onClick={handleDelete} > Delete </Button>
                 </Modal.Footer>
             </Modal>
             </Table>

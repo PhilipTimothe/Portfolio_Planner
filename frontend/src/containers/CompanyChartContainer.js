@@ -69,5 +69,3 @@ export default class CompanyChartContainer extends Component {
         )
     }
 }
-
-// When loading the page from scratch the chart data does not load properly.

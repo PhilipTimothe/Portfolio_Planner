@@ -15,15 +15,17 @@ class CompaniesController < ApplicationController
     end
 
     def destroy
-        @company = Company.find_by_id(params[:id])
-        @company.destroy
+        @company = Company.find(params[:id])
+        if @company.present?
+            @company.destroy
+        end
     end
 
 
     private 
     
     def company_params
-        params.require(:company).permit(:Name, :Symbol, :Industry, :Country) 
+        params.require(:company).permit(:id, :Name, :Symbol, :Industry, :Country) 
     end
 
 end

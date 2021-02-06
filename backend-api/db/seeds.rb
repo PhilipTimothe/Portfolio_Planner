@@ -8,14 +8,14 @@
 
 companies =  [
     {
-      "id": 1,
+      "id": "1",
       "Name": "Barnes Group Inc",
       "Symbol": "B",
       "Industry": "Specialty Industrial Machinery",
       "Country": "USA"
     },
     {
-      "id": 2,
+      "id": "2",
       "Name": "Apple Inc",
       "Symbol": "AAPL",
       "Industry": "Consumer Electronics",
