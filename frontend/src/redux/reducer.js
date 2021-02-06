@@ -37,7 +37,7 @@ export const reducer = (state = initialState, action) => {
         case "DELETE_COMPANY":
 
             return {
-                ...state, currentPortfolio: [...state.currentPortfolio.filter(company => company["id"] !== action.payload.companyId)]
+                ...state //, currentPortfolio: [...state.currentPortfolio.filter(company => company["id"] !== action.payload.companyId)]
             }
 
 

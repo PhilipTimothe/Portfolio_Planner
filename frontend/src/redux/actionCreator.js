@@ -66,12 +66,36 @@ export const setPortfolio = (company) => {
     }
 }
 
-// ({
-//     type: "SET_PORTFOLIO",
-//     payload: {company}
-// })
+export const deleteCompany = (companyId) => {
+    return (dispatch) => {
+        const data = {
+            id: companyId
+        };
+        const config = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+        return fetch(`http://localhost:3000/companies/${companyId}`, config)
+                .then(response => response.json())
+                .then((data) => {
+                    dispatch({ 
+                        type: "DELETE_COMPANY",
+                        payload: { 
+                            data
+                        },
+                    })
+                })
+    }
+}
 
-export const deleteCompany = (companyId) => ({
-    type: "DELETE_COMPANY",
-    payload: {companyId}
-})
+
+
+
+// ({
+//     type: "DELETE_COMPANY",
+//     payload: {companyId}
+// })

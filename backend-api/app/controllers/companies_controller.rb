@@ -14,6 +14,11 @@ class CompaniesController < ApplicationController
         render json: @company, except: [:created_at, :updated_at]
     end
 
+    def destroy
+        @company = Company.find_by_id(params[:id])
+        @company.destroy
+    end
+
 
     private 
     
