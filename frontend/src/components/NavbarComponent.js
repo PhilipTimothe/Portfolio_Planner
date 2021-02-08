@@ -12,6 +12,9 @@ export function NavbarComponent() {
                 <Link to="/">
                     <Button variant="outline-info" className="mr-sm-2">Home</Button> 
                 </Link>
+                <Link to="/search">
+                    <Button variant="outline-info" className="mr-sm-2">Company Search</Button>
+                </Link>
                 <Link to="/portfolio">
                     <Button variant="outline-info" className="mr-sm-2">Portfolio</Button>
                 </Link>
