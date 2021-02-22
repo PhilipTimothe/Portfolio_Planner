@@ -7,9 +7,9 @@ export function NavbarComponent() {
     return (
         <>
             <Navbar fixed="top" bg="dark" variant="dark">
-                <Navbar.Brand href="#home">Portfolio Planner</Navbar.Brand>
+                <Navbar.Brand href="">Portfolio Planner</Navbar.Brand>
                 <Nav className="mr-auto"></Nav>
-                <Link to="/">
+                <Link to="/Portfolio_Planner/">
                     <Button variant="outline-info" className="mr-sm-2">Home</Button> 
                 </Link>
                 <Link to="/search">
