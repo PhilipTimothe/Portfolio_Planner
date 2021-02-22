@@ -77,7 +77,7 @@ class CompanySearchContainer extends Component {
                 <div>
                     {this.renderCompanyList()}
                 </div>
-                <CounterComponent />
+                {/* <CounterComponent /> */}
             </>
         );
     };

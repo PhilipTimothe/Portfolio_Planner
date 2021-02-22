@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Portfolio Planner
+React / Redux project that focuses on financial planning with the means of accessing financial information from external sources along with internal backend stored details.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
