@@ -11,7 +11,7 @@ function App() {
     <Router>
       <NavbarComponent />
       <Switch>
-        <Route path="/" exact component={LandingPageContainer} />
+        <Route path="/Portfolio_Planner" exact component={LandingPageContainer} />
         <Route path="/search" exact component={CompanySearchContainer} />
         <Route path="/company-overview/:id" exact component={CompanyContainer} />
         <Route path="/portfolio" exact component={PortfolioContainer} />
