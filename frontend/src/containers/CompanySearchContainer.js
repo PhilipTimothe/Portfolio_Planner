@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { CompanySearchForm } from '../components/CompanySearchForm';
-import CompanyCard from '../components/CompanyCard';
+import { CompanySearchComponent } from '../components/CompanySearchComponent';
+import CompanyCardComponent from '../components/CompanyCardComponent';
 import { connect } from 'react-redux'
 import { getPortfolio } from '../redux/actionCreator'
+// import CounterComponent from '../components/CounterComponent';
 
 const apiKey = process.env.API_KEY;
 
@@ -15,11 +16,12 @@ class CompanySearchContainer extends Component {
           initialRender: true
     }
 
+    // Component Prop functionality passing result list array data to Card Component
     renderCompanyList() {
         return (
             <>
                 {this.state.searchResultsList.map((company) => (
-                    <CompanyCard 
+                    <CompanyCardComponent 
                         key={uuidv4()}
                         id={uuidv4()}
                         companySymbol={company["1. symbol"]} 
@@ -33,12 +35,14 @@ class CompanySearchContainer extends Component {
         )
     }
 
+    // review call apply and bind relative to non arrow functionality
     handleSearchFormChange = event => {
         this.setState({
             symbol: event.target.value
         })
     }
 
+    // Submit condition which searches for a company list via submitted symbol or letter
     handleSearchFormSubmit = event => {
         const form = event.currentTarget;
         if (form.checkValidity() === false && this.state.symbol === '') {
@@ -60,10 +64,11 @@ class CompanySearchContainer extends Component {
         }
     }
 
+    // Company Search Form functionality by Symbol of Company.  Also, rendering of search result component.
     render() {
         return (
             <>
-                <CompanySearchForm 
+                <CompanySearchComponent 
                     onSubmit={this.handleSearchFormSubmit}
                     validated={this.state.validated}
                     value={this.state.symbol}
@@ -72,6 +77,7 @@ class CompanySearchContainer extends Component {
                 <div>
                     {this.renderCompanyList()}
                 </div>
+                <CounterComponent />
             </>
         );
     };

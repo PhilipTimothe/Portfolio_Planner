@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import { useEffect } from 'react';
-import Portfolio from "../components/Portfolio"
+import PortfolioComponent from "../components/PortfolioComponent"
 import { connect } from 'react-redux'
 import { getPortfolio } from '../redux/actionCreator'
 
@@ -18,7 +17,7 @@ componentDidMount() {
             <>
                 <div>
                     <br/>
-                    <Portfolio companies={this.props.currentPortfolio}/>
+                    <PortfolioComponent companies={this.props.currentPortfolio}/>
                 </div>
             </>
         )

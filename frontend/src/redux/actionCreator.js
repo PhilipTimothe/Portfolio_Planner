@@ -20,7 +20,6 @@ export const getPortfolio = () => {
         fetch(`http://localhost:3000/companies`)
             .then((res) => res.json())
             .then(data =>  {
-                // console.log(Object(data))
                 Object(data).map((company) => (
                     dispatch({ 
                         type: "GET_PORTFOLIO",

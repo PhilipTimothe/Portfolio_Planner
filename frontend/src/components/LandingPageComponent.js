@@ -10,12 +10,12 @@ export function LandingPageComponent() {
                 <Container>
                     <h1>Portfolio Planner</h1>
                     <p>
-                    Build a financial portfolio with finacial tools that help you discover new companies along with relative financial history and company information.
+                        Build a financial portfolio with finacial tools that help you discover new companies along with relative financial history and company information.
                     </p>
                 </Container>
             </Jumbotron>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <div style={{ textAlign: 'center', padding: '70px 0' }}>
                 <Link to="/search">
                     <Button variant="outline-info">

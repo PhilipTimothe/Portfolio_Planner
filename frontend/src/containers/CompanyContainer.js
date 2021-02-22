@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import {connect} from 'react-redux'
 import { getCompany } from '../redux/actionCreator'
-import CompanyOverview from '../components/CompanyOverview';
+import CompanyOverviewComponent from '../components/CompanyOverviewComponent';
 
 class CompanyContainer extends Component {
     state = {
@@ -12,7 +12,7 @@ class CompanyContainer extends Component {
 
         return (
             <>
-                <CompanyOverview
+                <CompanyOverviewComponent
                     key={uuidv4()}
                     id={uuidv4()}
                     symbol={this.props.currentCompany["Symbol"]}
