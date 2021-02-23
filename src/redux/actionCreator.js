@@ -1,3 +1,5 @@
+const backendUrl = 'https://tranquil-escarpment-33998.herokuapp.com'
+
 export const getCompany = (symbol) => {
     return (dispatch) => {
         const apiKey = process.env.API_KEY;
@@ -17,7 +19,7 @@ export const getCompany = (symbol) => {
 
 export const getPortfolio = () => {
     return (dispatch) => {
-        fetch(`http://localhost:3000/companies`)
+        fetch(`${backendUrl}/companies`)
             .then((res) => res.json())
             .then(data =>  {
                 Object(data).map((company) => (
@@ -51,7 +53,7 @@ export const setPortfolio = (company) => {
             },
             body: JSON.stringify(data),
         };
-        return fetch(`http://localhost:3000/companies`, config)
+        return fetch(`${backendUrl}/companies`, config)
                 .then(response => response.json())
                 .then((data) => {
                     dispatch({ 
@@ -69,7 +71,7 @@ export const deleteCompany = (companyId) => {
         const config = {
             method: "DELETE",
         };
-        fetch(`http://localhost:3000/companies/${companyId}`, config)
+        fetch(`${backendUrl}/companies/${companyId}`, config)
             dispatch({ 
                 type: "DELETE_COMPANY",
                 payload: { 
